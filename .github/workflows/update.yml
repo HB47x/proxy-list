@@ -23,7 +23,7 @@ jobs:
       - name: Checkout private builder
         uses: actions/checkout@v4
         with:
-          repository: HB47x/proxy-builder
+          repository: ${{ secrets.BUILDER_REPO }}
           token: ${{ secrets.BUILDER_TOKEN }}
           path: builder
 
@@ -31,7 +31,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install requests PyRoxy
+      - name: Install dependencies
+        run: pip install requests yarl pysocks certifi cloudscraper icmplib psutil maxminddb
 
       - name: Build lists
         working-directory: builder
