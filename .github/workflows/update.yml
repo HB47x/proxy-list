@@ -2,7 +2,7 @@ name: Build and publish proxy lists
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -32,7 +32,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests yarl pysocks certifi cloudscraper icmplib psutil maxminddb
+        run: pip install requests yarl pysocks maxminddb
 
       - name: Build lists
         working-directory: builder
