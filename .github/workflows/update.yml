@@ -2,7 +2,7 @@ name: Build and publish proxy lists
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: "17 */2 * * *"
   workflow_dispatch:
 
 permissions:
