@@ -1,2 +1,2 @@
 # Proxy-List 
-Get Live Proxies Every Hour
+Get Live Proxies Every 2 Hour
